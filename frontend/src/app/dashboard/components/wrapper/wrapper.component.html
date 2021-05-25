@@ -1,0 +1,39 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <mat-nav-list>
+  
+        <mat-list-item>
+          <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+          <span *ngIf="isExpanded" (click)="isExpanded = !isExpanded">Menu</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'dashboard'">
+          <!-- <mat-icon mat-list-icon >home</mat-icon> -->
+          <button mat-mini-fab (click)="isExpanded = !isExpanded">1</button>
+          <span *ngIf="isExpanded" (click)="isExpanded = !isExpanded">First</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'second'">
+          <!-- <mat-icon mat-list-icon>important_devices</mat-icon> -->
+          <button mat-mini-fab (click)="isExpanded = !isExpanded">2</button>
+          <span *ngIf="isExpanded" (click)="isExpanded = !isExpanded">Second</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'third'">
+          <!-- <mat-icon mat-list-icon>supervisor_account</mat-icon> -->
+          <!-- <mat-icon>info</mat-icon> -->
+          <button mat-mini-fab (click)="isExpanded = !isExpanded">3</button>
+          <span *ngIf="isExpanded" (click)="isExpanded = !isExpanded">Third </span>
+        </mat-list-item>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <div class="content">
+      <mat-toolbar>
+        <h4>Angular-Chart-Assignment</h4>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-sidenav-container>
