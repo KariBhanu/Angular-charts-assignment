@@ -1,13 +1,12 @@
-import { Options } from 'highcharts';
-export const columnChart:Options = {
+export const columnChart:any = {
     chart: {
         type: 'column'
     },
     title: {
-        text: 'Monthly Average Rainfall'
+        text: 'Historic World Population by Region'
     },
     subtitle: {
-        text: 'Source: WorldClimate.com'
+        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
     },
     xAxis: {
         categories: [
@@ -24,21 +23,22 @@ export const columnChart:Options = {
             'Nov',
             'Dec'
         ],
-        crosshair: true
+        title: {
+            text: null
+        }
     },
     yAxis: {
         min: 0,
         title: {
-            text: 'Rainfall (mm)'
+            text: 'Population (millions)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
         }
     },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
+        valueSuffix: ' millions'
     },
     plotOptions: {
         column: {

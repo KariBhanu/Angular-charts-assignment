@@ -12,6 +12,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartModule } from 'angular-highcharts';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChartModule } from 'angular-highcharts';
     DashboardRoutingModule,
     HighchartsChartModule,
     ChartModule,
+    HttpClientModule,
     // NG Material Modules
     MatSidenavModule,
     MatIconModule,

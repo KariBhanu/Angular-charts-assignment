@@ -1,4 +1,3 @@
-import { Options } from 'highcharts';
 import * as Highcharts from 'highcharts';
 export const barChart:any = {
     chart: {
@@ -11,7 +10,7 @@ export const barChart:any = {
         text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
     },
     xAxis: {
-        categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+        categories:[],
         title: {
             text: null
         }
@@ -54,6 +53,6 @@ export const barChart:any = {
     series: [{
         name: 'Year 1800',
         type:'bar',
-        data: [107, 31, 635, 203, 2]
+        data: []
     }]
 }

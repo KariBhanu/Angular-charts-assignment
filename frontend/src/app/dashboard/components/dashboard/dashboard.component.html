@@ -1,18 +1,57 @@
 
-<div class="container inputBox">
-    <form #inputForm="ngForm" >
-        <div class="form-group">
+<div class="container padding20px">
+    <form #inputForm="ngForm">
+      <div class="row">
+        <div class="form-group col" *ngIf="selectedValue!=''">
           <label>Add X-axis value</label>
+          <!-- <label *ngIf="selectedValue=='Barchart' || selectedValue=='Columnchart' ">Add X-axis value</label> -->
+          <!-- <label *ngIf="selectedValue=='Piechart' || selectedValue=='Donutchart' ">Add category value</label> -->
           <input type="text" class="form-control" name="inputText" [(ngModel)]="xaxisText">
         </div>
-        <div class="form-group">
-            <label>Add Y-axis value</label>
-            <input type="text" class="form-control" name="inputText" [(ngModel)]="yaxisText">
-          </div>
-        <button type="submit" class="btn btn-primary" (click)="submit()">Add to graphs</button>
+        <div class="form-group col" *ngIf="selectedValue!=''">
+          <!-- <label *ngIf="selectedValue=='Barchart' || selectedValue=='Columnchart' ">Add Y-axis value</label> -->
+          <label>Add Y-axis value</label>
+          <!-- <label *ngIf="selectedValue=='Piechart' || selectedValue=='Donutchart' ">Add category value</label> -->
+          <input type="text" class="form-control" name="inputText" [(ngModel)]="yaxisText">
+        </div>
+        <div class="form-group col">
+          <label>Select chart to add a point</label>
+          <select class="form-control" name="selectedValue" [(ngModel)]="selectedValue">
+            <!-- <option>Piechart</option> -->
+            <option>Barchart</option>
+            <option>Columnchart</option>
+            <!-- <option>Donutchart</option> -->
+          </select>      
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="submit()" *ngIf="selectedValue!=''">
+        Add point to 
+        <span *ngIf="selectedValue == 'Barchart'">Barchart</span>
+        <!-- <span *ngIf="selectedValue == 'Piechart'">Piechart</span> -->
+        <!-- <span *ngIf="selectedValue == 'Donutchart'">Donutchart</span> -->
+        <span *ngIf="selectedValue == 'Columnchart'">Columnchart</span>
+      </button>
     </form>
 </div>
-<div class="container">
+<!-- <div class="container padding20px">
+  <div class="row">
+    <div class="col-12" *ngIf="selectedValue=='Piechart'">
+     <div [chart]="pieChart"></div>
+    </div>
+    <div class="col-12" *ngIf="selectedValue=='Barchart'">
+      <div [chart]="barChart"></div>
+    </div>-->
+  <!-- </div> -->
+  <!-- <div class="row"> -->
+    <!-- <div class="col-12" *ngIf="selectedValue=='Columnchart'">
+      <div [chart]='columnChart'></div>
+    </div>
+    <div class="col-12" *ngIf="selectedValue=='Donutchart'">
+      <div [chart]='donutChart'></div>
+    </div>
+  </div>
+</div>  -->
+<div class="container padding20px">
   <div class="row">
     <div class="col">
      <div [chart]="pieChart"></div>

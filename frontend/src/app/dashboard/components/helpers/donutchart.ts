@@ -8,12 +8,12 @@ var colors = Highcharts.getOptions().colors!,
         'Safari',
         'Edge',
         'Opera',
-        'Other'
+        'Other',
     ],
     data = [
         {
             y: 62.74,
-            color: colors[2],
+            color: colors[0],
             drilldown: {
                 name: 'Chrome',
                 categories: [
@@ -91,7 +91,7 @@ var colors = Highcharts.getOptions().colors!,
         },
         {
             y: 7.23,
-            color: colors[0],
+            color: colors[2],
             drilldown: {
                 name: 'Internet Explorer',
                 categories: [
