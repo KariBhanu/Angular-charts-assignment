@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-//import * as Highcharts from 'highcharts';
+import * as Highcharts from 'highcharts';
 import { Chart } from 'angular-highcharts';
 import { pieChart as piechartOption } from '../helpers/piechart';
 import { barChart as barchartOption} from '../helpers/barchart';
 import { columnChart as columnchartOption } from '../helpers/columnchart';
-import { donutChart }  from '../helpers/donutchart';
+import { donutChart as donutchartOption }  from '../helpers/donutchart';
 import { HttpClient } from "@angular/common/http";
+
 
 
 
@@ -26,11 +27,15 @@ export class DashboardComponent implements OnInit {
   public xaxisLabel:any=[];
   public seriesData:any=[];
   
+
+
+
   barchartOption = barchartOption;
   columnchartOption = columnchartOption;
   piechartOption = piechartOption;
-  //barOptions:Options = barchartOption;
+  donutchartOption = donutchartOption;
   
+  public colors = Highcharts.getOptions().colors;
 
   public barChart: Chart = new Chart;
   public pieChart: Chart = new Chart;
@@ -41,7 +46,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+   console.log(this.colors);
     this._http.get('./assets/barchart.json').subscribe(data =>{
       this.barchartData = data;
       this.barchartData.forEach((v : any)=>{
@@ -87,7 +92,38 @@ export class DashboardComponent implements OnInit {
     this.pieChart = new Chart(this.piechartOption);
   }
   drawDonutchart(){
-    this.donutChart = new Chart(donutChart);
+    console.log(donutchartOption);
+    let browserData = [];
+    let versionsData = [];
+    let dataLen = this.piechartData.length;
+    let drillDataLen;
+    let brightness;
+    for (let i = 0; i < dataLen; i += 1) {
+
+      // add browser data
+      browserData.push({
+          name: this.piechartData[i].Category,
+          y: this.piechartData[i].Percentage,
+          color: this.colors![i]
+      });
+  
+      // add version data
+      drillDataLen = this.piechartData[i].version.length;
+      for (let j = 0; j < drillDataLen; j += 1) {
+          brightness = 0.2 - (j / drillDataLen) / 5;
+          versionsData.push({
+              name: this.piechartData[i].version[j].name,
+              y: this.piechartData[i].version[j].Percentage,
+              color: Highcharts.color(this.colors![i]).brighten(brightness).get()
+          });
+      }
+  }
+  console.log(browserData);
+  console.log(versionsData);
+  this.donutchartOption.series![0].data = browserData;
+  this.donutchartOption.series![1].data = versionsData;
+ 
+    this.donutChart = new Chart(this.donutchartOption);
   }
 
   submit(){

@@ -3,24 +3,14 @@
     "Category": "Chrome",
     "Percentage": 62.74,
     "version":[
-      {"name":"Chrome v65.0","Percentage":0.1},
+      {"name":"Chrome v65.0","Percentage":4.54},
       {"name":"Chrome v64.0","Percentage":1.3},
       {"name":"Chrome v63.0","Percentage":53.02},
       {"name":"Chrome v62.0","Percentage":1.4},
       {"name":"Chrome v61.0","Percentage":0.88},
       {"name":"Chrome v60.0","Percentage":0.56},
-      {"name":"Chrome v59.0","Percentage":0.45},
-      {"name":"Chrome v58.0","Percentage":0.49},
-      {"name":"Chrome v57.0","Percentage":0.32},
-      {"name":"Chrome v56.0","Percentage":0.29},
-      {"name":"Chrome v55.0","Percentage":0.79},
-      {"name":"Chrome v54.0","Percentage":0.18},
-      {"name":"Chrome v51.0","Percentage":0.13},
-      {"name":"Chrome v49.0","Percentage":0.16},
-      {"name":"Chrome v48.0","Percentage":0.13},
-      {"name":"Chrome v47.0","Percentage":0.11},
-      {"name":"Chrome v43.0","Percentage":0.17},
-      {"name":"Chrome v29.0","Percentage":0.26}
+      {"name":"Chrome v59.0","Percentage":0.55},
+      {"name":"Chrome v58.0","Percentage":0.49}
     ]
   },
   {
@@ -40,13 +30,7 @@
       {"name":"Firefox v58.0","Percentage":1.02},
       {"name":"Firefox v57.0","Percentage":7.36},
       {"name":"Firefox v56.0","Percentage":0.35},
-      {"name":"Firefox v55.0","Percentage":0.11},
-      {"name":"Firefox v54.0","Percentage":0.1},
-      {"name":"Firefox v52.0","Percentage":0.95},
-      {"name":"Firefox v51.0","Percentage":0.15},
-      {"name":"Firefox v50.0","Percentage":0.1},
-      {"name":"Firefox v48.0","Percentage":0.31},
-      {"name":"Firefox v57.0","Percentage":0.12}
+      {"name":"Firefox v55.0","Percentage":1.84}
     ]
   },
   {

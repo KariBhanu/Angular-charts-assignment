@@ -7,6 +7,9 @@ export const pieChart:any = {
   title: {
       text: 'Browser market shares in January, 2018'
   },
+  subtitle: {
+    text: 'Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+},
   tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
   },
@@ -61,5 +64,4 @@ export const pieChart:any = {
     //       y: 2.61
     //   }]
   }]
-  
- }
+}
