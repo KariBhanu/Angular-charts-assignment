@@ -4,7 +4,7 @@
           <label>Enter the sentense</label>
           <input type="text" class="form-control" name="inputText" [(ngModel)]="inputText">
         </div>
-        <button type="submit" class="btn btn-primary" (click)=onSubmit()>Submit</button>
+        <button [disabled]="inputText == ''" type="submit" class="btn btn-primary" (click)=onSubmit()>Submit</button>
     </form>
     <div class="answer">
         <h4>String given as input : {{previousText}}</h4>

@@ -8,6 +8,11 @@ import { WrapperComponent } from './components/wrapper/wrapper.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: WrapperComponent,
     children: [
       {

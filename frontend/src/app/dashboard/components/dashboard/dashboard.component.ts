@@ -145,6 +145,8 @@ export class DashboardComponent implements OnInit {
     else{
         console.log("eroor");
     }
+    this.xaxisText = "";
+    this.yaxisText = "";
   }
   
   percentageCal(){

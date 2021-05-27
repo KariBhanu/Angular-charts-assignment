@@ -8,26 +8,15 @@ mat-sidenav-container {
         mat-list-item{
           height:65px;
         }
-        .chevron-button {
-          transition: 300ms ease-in-out;
-          transform: rotate(0deg);
-          right: 0;
-          float: right;
-          position: absolute;
-        }
-  
-        .chevron-button.rotated {
-          transform: rotate(180deg);
-        }
       }
+      background-color:#7cb5ec;
     }
   }
 
   .content{
     mat-toolbar{
-      background-color:rgb(24, 151, 236);
-      color: white;
-      
+      background-color:#7cb5ec;
+      color: black;      
     }
 
   }
