@@ -29,10 +29,9 @@ export class ThirdComponent implements OnInit {
     this.countWords(this.previousText);   
   }
   countWords(str:string){
-
-      str = str.replace(/(^\s*)|(\s*$)/gi,"");
-      str = str.replace(/[ ]{2,}/gi," ");
-      str = str.replace(/\n /,"\n");
+      str = str.replace(/(^\s*)|(\s*$)/gi,"");//removing spaces on both sides
+      str = str.replace(/[ ]{2,}/gi," ");//removing double spaces in between
+      str = str.replace(/\n /,"\n");//removing new lines
       this.wordCount = str.split(' ').length;
       this.vowelCount = this.vowelCounter(str);
       this.articleCount = this.articleCounter(str.split(' '));
@@ -67,6 +66,7 @@ export class ThirdComponent implements OnInit {
     return max;
   }
   shortestWordLengthCounter(array:any){
+    //temp array is array with out articles
     let tempArray = array.filter((v:any)=>{
         if( v != 'a' && v!='an' && v!='the'){return v}
     });
@@ -82,7 +82,6 @@ export class ThirdComponent implements OnInit {
     else{
       return 0;
     }
-    
   }
   
 }
