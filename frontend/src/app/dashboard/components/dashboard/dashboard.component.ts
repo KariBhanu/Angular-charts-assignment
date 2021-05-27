@@ -23,10 +23,14 @@ export class DashboardComponent implements OnInit {
   public barchartData:any=[]
   public piechartData:any=[];
 
+//public arrayTemp:any = []
+
+
   //arrays for to store and pass to into chart drawings
   public yaxisValue:any=[];
   public xaxisLabel:any=[];
   public seriesData:any=[];
+
   
   //Options for drawing the charts
   barchartOption = barchartOption;
@@ -62,20 +66,30 @@ export class DashboardComponent implements OnInit {
     this._http.get('./assets/piechart.json').subscribe(data =>{
       this.piechartData = data;
       this.piechartData.forEach((v : any)=>{
-        if(v.Category != 'QQ' && v.Category != 'Others')        
-        {this.seriesData.push([v.Category,v.Percentage,v.Category]);}
-        else{
-          this.seriesData.push([v.Category,v.Percentage,null]);
-        }
+               this.seriesData.push([v.Category,v.Percentage])
       })
       console.log(this.seriesData);
-      this.drawPiechart(this.seriesData);
+      this.drawPiechart(this.seriesData);      
       this.drawDonutchart();
     },
     error =>{
       console.log(error);
     });
-    this.percentageCal();
+    // this._http.get('./assets/piechartTest.json').subscribe(data=>{
+    //   this.arrayTemp = data;
+    //   this.arrayTemp.forEach((v:any)=>{
+    //     let sum = this.arrayTemp.reduce((acc:number,v:any)=>{
+    //       return acc = acc + v.Count;
+    //     },0);
+    //     let per = (v.Count / sum) * 100;
+    //     this.seriesData.push([v.Category,per]);
+    // });    
+    // this.drawPiechart(this.seriesData);
+    // },
+    // error => {
+    //   console.log(error);
+    // });
+    
   }
   //function to draw bar chart , two arguments are needed xAxis label array and Y axis label Array
   drawBarchart(x:any,y:any){
@@ -148,31 +162,4 @@ export class DashboardComponent implements OnInit {
     this.xaxisText = "";
     this.yaxisText = "";
   }
-  
-  percentageCal(){
-    let array = [
-      {
-        "Category": "Chrome",
-        "Count": 80
-      },
-      {
-        "Category": "Internet Explorer",
-        "Count": 15
-      },
-      {
-        "Category": "Firefox",
-        "Count": 5
-      }
-    ];
-    array.forEach((v:any)=>{
-        let sum = array.reduce((acc:number,v:any)=>{
-          return acc = acc + v.Count;
-        },0);
-        let per = (v.Count / sum) * 100;
-        console.log(per);
-    });
-  }
-
-
-
 }
