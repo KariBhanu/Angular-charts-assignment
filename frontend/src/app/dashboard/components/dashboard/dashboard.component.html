@@ -54,7 +54,7 @@
 <div class="container padding20px">
   <div class="row">
     <div class="col">
-     <div [chart]="pieChart"></div>
+     <div [chart]='columnChart'></div>
     </div>
     <div class="col">
       <div [chart]="barChart"></div>
@@ -62,7 +62,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <div [chart]='columnChart'></div>
+      <div [chart]="pieChart"></div>
     </div>
     <div class="col">
       <div [chart]='donutChart'></div>
