@@ -28,6 +28,9 @@ xAxis: {
   plotOptions: {
       area: {
           pointStart: 2016,
+          dataLabels:{
+            enabled: true
+        },
           marker: {
               enabled: false,
               symbol: 'circle',

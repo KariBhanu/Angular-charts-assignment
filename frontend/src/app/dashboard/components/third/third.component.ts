@@ -23,8 +23,8 @@ export class ThirdComponent implements OnInit {
   }
 
   onSubmit() {
-    this.previousText = this.inputText.replace(/<[^>]*>?/gm, '');
-    this.previousText = this.previousText.replace(/[^\w\s]/gi, '');
+    this.previousText = this.inputText.replace(/<[^>]*>?/gm, '');//removing formating
+    this.previousText = this.previousText.replace(/[^\w\s]/gi, '');//removing special charaters
     this.inputText = "";
     this.countWords(this.previousText);   
   }
@@ -41,7 +41,7 @@ export class ThirdComponent implements OnInit {
   vowelCounter(str:string){
     if(str.match(/[aeiou]/gi)?.length != undefined){
       //this.vowelArray = str.match(/[aeiou]/gi)!;      
-      return str.match(/[aeiou]/gi)!.length;
+      return str.match(/[aeiouAEIOU]/gi)!.length;
     }
     else{
       return 0;

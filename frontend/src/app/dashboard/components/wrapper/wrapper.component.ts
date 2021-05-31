@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class WrapperComponent implements OnInit {
 
-  isExpanded: boolean = false;
-  isOpened:string = "";
+  isExpanded: boolean = true;
+  isOpened:string = "dashboard";
 
   constructor(private router: Router) { }
 

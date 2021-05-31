@@ -10,7 +10,7 @@ export const barChart:any = {
         text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
     },
     xAxis: {
-        categories:[],
+        categories:[],//should be changed
         title: {
             text: null
         }
