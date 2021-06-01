@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-charts-3f389": {
+      "hosting": {
+        "frontend": [
+          "angular-charts-3f389"
+        ]
+      }
+    }
+  }
+}
